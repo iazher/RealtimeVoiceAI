@@ -15,8 +15,10 @@ final class VoiceAssistantViewModel: ObservableObject {
     @Published var messages: [Message] = []
     @Published var isRecording = false
     @Published var liveTranscript = ""
+    
 
     private let speechRecognizer = SpeechRecognizer()
+    private let openAIService = OpenAIService()
 
     init() {
 
@@ -42,8 +44,9 @@ final class VoiceAssistantViewModel: ObservableObject {
 
         do {
             isRecording = true
-            //try speechRecognizer.startRecording()
-            simulateSpeech() // for testing on simulator 
+            // TODO: use the startRecording method for testing on real device and comment out simulateSpeech()
+            // try speechRecognizer.startRecording()
+            simulateSpeech() // for testing on simulator
         } catch {
             print(error.localizedDescription)
         }
@@ -89,6 +92,39 @@ final class VoiceAssistantViewModel: ObservableObject {
                 isUser: true
             )
         )
+        
+        let aiMessage = Message(
+            text: "",
+            isUser: false
+        )
+
+        messages.append(aiMessage)
+
+        let aiIndex = messages.count - 1
+
+        Task {
+
+            do {
+
+                try await openAIService.streamResponse(
+                    userMessage: finalText
+                ) { token in
+
+                    self.messages[aiIndex] = Message(
+                        text: self.messages[aiIndex].text + token,
+                        isUser: false
+                    )
+
+                } onComplete: {
+
+                    print("Streaming Complete")
+                }
+
+            } catch {
+
+                print(error.localizedDescription)
+            }
+        }
 
         liveTranscript = ""
     }
