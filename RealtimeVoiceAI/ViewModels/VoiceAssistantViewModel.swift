@@ -14,34 +14,82 @@ final class VoiceAssistantViewModel: ObservableObject {
 
     @Published var messages: [Message] = []
     @Published var isRecording = false
+    @Published var liveTranscript = ""
+
+    private let speechRecognizer = SpeechRecognizer()
+
+    init() {
+
+        Task {
+            _ = await speechRecognizer.requestPermissions()
+        }
+
+        speechRecognizer.$transcript
+            .receive(on: RunLoop.main)
+            .assign(to: &$liveTranscript)
+    }
 
     func toggleRecording() {
 
-        isRecording.toggle()
-
         if isRecording {
-
-            print("Started Recording")
-
+            stopRecording()
         } else {
-
-            print("Stopped Recording")
-
-            let fakeUserText = "Hello AI" // fake user input
-
-            messages.append(
-                Message(
-                    text: fakeUserText,
-                    isUser: true
-                )
-            )
-
-            messages.append(
-                Message(
-                    text: "Hello human!!", // fake response
-                    isUser: false
-                )
-            )
+            startRecording()
         }
+    }
+
+    private func startRecording() {
+
+        do {
+            isRecording = true
+            //try speechRecognizer.startRecording()
+            simulateSpeech() // for testing on simulator 
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func simulateSpeech() {
+
+        isRecording = true
+
+        liveTranscript = ""
+
+        let words = [
+            "Hello",
+            "how",
+            "are",
+            "you",
+            "today"
+        ]
+
+        Task {
+
+            for word in words {
+                try? await Task.sleep(for: .milliseconds(400))
+                liveTranscript += word + " "
+            }
+        }
+    }
+
+    private func stopRecording() {
+        
+        isRecording = false
+        speechRecognizer.stopRecording()
+        
+        let finalText = liveTranscript.trimmingCharacters(
+            in: .whitespacesAndNewlines
+        )
+
+        guard !finalText.isEmpty else { return }
+
+        messages.append(
+            Message(
+                text: finalText,
+                isUser: true
+            )
+        )
+
+        liveTranscript = ""
     }
 }

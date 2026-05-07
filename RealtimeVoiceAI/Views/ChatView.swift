@@ -50,6 +50,16 @@ struct ChatView: View {
             }
 
             Spacer()
+            
+            if vm.isRecording {
+
+                Text(vm.liveTranscript.isEmpty
+                     ? "Listening..."
+                     : vm.liveTranscript
+                )
+                .padding()
+                .foregroundColor(.secondary)
+            }
 
             Button(action: {
                 vm.toggleRecording()
