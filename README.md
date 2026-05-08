@@ -1,54 +1,47 @@
-A realtime AI-powered voice assistant built with SwiftUI, Combine, and OpenAI streaming APIs.
+# RealtimeVoiceAI 
 
-RealtimeVoiceAI delivers a low-latency conversational experience by streaming AI responses token-by-token, creating a smooth and responsive interaction similar to modern AI assistants. 
+Realtime AI-powered voice assistant built with SwiftUI, Combine, and OpenAI streaming APIs.RealtimeVoiceAI delivers a low-latency conversational experience by streaming AI responses token-by-token, creating a smooth and responsive interaction similar to modern AI assistants.
 
-## Features
+# Features
+
 - Realtime AI response streaming
 - Token-by-token incremental rendering
 - Speech-to-text architecture
-- Swift Concurrency (async/await)
+- Swift Concurrency (`async/await`)
 - Combine-based reactive state management
 - Modern SwiftUI chat interface
+- Animated waveform visualization
+- Auto-scrolling chat
 - Voice assistant style interaction flow
 - MVVM architecture
 - Simulator-compatible speech simulation mode
 
-## Demo
+# Demo
 
-<table>
-  <tr>
-    <td align="center">
-      <img width="301.5" height="655.5" alt="Simulator Screenshot - iPhone 17 Pro - 2026-05-08 at 01 41 52" src="https://github.com/user-attachments/assets/ef6e303a-0223-452a-a736-44dbffa789a2" />
-      <br/>
-      <b>Voice Input</b>
-    </td>
-    <td align="center">
-      <img width="301.5" height="655.5" alt="Simulator Screenshot - iPhone 17 Pro - 2026-05-08 at 01 41 59" src="https://github.com/user-attachments/assets/882b10aa-840a-4f24-b1d6-b0280f3b9613" />
-      <br/>
-      <b>Streaming AI Response</b>
-    </td>
-  </tr>
-</table>
+https://github.com/user-attachments/assets/df0eb73b-d380-44a3-aec5-4f5e8f785aeb
 
-## Tech Stack
+# Tech Stack
 
-iOS 
+## iOS
 - SwiftUI
 - Combine
 - AVFoundation
 - Speech Framework
 - Swift Concurrency
 
-AI
+## AI
 - OpenAI API
 - Streaming Chat Completions
 - Incremental token rendering
 
-## ARCHITECTURE 
+
+
+# ARCHITECTURE 
 
     UI Layer
      ├── ChatView
      ├── Voice Button
+     ├── WaveformView
      └── Streaming Message Renderer
 
     ViewModels
@@ -62,7 +55,7 @@ AI
     Models
      └── Message
 
-## Realtime Streaming Flow
+# Realtime Streaming Flow
 
              User Message
                   ↓   
@@ -74,36 +67,36 @@ AI
                   ↓
     Realtime Conversational Experience
 
-The app streams AI responses incrementally instead of waiting for a full completion, significantly improving perceived responsiveness and user experience.
+The app streams AI responses incrementally instead of waiting for a full completion, significantly improving perceived responsiveness and conversational fluidity.
 
-## Current Functionality
+# Current Functionality
 
 - Simulated realtime speech transcription
 - Streaming AI responses
 - Dynamic chat updates
+- Animated waveform visualization
+- Auto-scrolling chat
 - Reactive SwiftUI rendering
 - Realtime conversational UI
 
-## Future Improvements
+# Future Improvements
 
 - Real microphone speech recognition (when have real device for testing)
 - AI voice playback
-- Animated waveform visualization
-- Auto-scrolling chat
 - Latency metrics dashboard
 - Conversation persistence
 - On-device caching
 - Dark mode polish
 - Multi-model selection
 
-## Getting Started
+# Getting Started
 
 Requirements
 - Xcode 16+
 - iOS 18+
 - OpenAI API Key
 
-## Setup
+# Setup
 
 Clone the repository:
 
@@ -119,7 +112,7 @@ Add your OpenAI API key inside:
 
 Run the app on simulator or physical device.
 
-## Learning Outcomes
+# Learning Outcomes
 
 This project was built to explore:
 - Realtime AI interaction systems
@@ -128,7 +121,8 @@ This project was built to explore:
 - Reactive UI patterns
 - Modern iOS concurrency
 - AI-first mobile UX design
+- Realtime streaming UX engineering
 
-## Author
+# Author
 
 Iman Azher
