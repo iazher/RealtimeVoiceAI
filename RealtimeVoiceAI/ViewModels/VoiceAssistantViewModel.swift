@@ -57,13 +57,14 @@ final class VoiceAssistantViewModel: ObservableObject {
         isRecording = true
 
         liveTranscript = ""
-
+        
         let words = [
-            "Hello",
-            "how",
-            "are",
-            "you",
-            "today"
+            "write",
+            "an",
+            "essay",
+            "of",
+            "180",
+            "words"
         ]
 
         Task {
