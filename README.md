@@ -107,7 +107,7 @@ Requirements
 
 Clone the repository:
 
-    git clone https://github.com/imanazher/RealtimeVoiceAI.git
+    git clone https://github.com/iazher/RealtimeVoiceAI.git
 
 Open the project in Xcode.
 
