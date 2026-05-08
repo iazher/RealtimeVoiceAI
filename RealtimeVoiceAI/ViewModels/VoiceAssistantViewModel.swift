@@ -64,7 +64,9 @@ final class VoiceAssistantViewModel: ObservableObject {
             "essay",
             "of",
             "180",
-            "words"
+            "words",
+            "on any",
+            "topic"
         ]
 
         Task {

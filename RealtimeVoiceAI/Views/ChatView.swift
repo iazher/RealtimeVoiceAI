@@ -68,13 +68,17 @@ struct ChatView: View {
                 Spacer()
                 
                 if vm.isRecording {
-                    
-                    Text(vm.liveTranscript.isEmpty
-                         ? "Listening..."
-                         : vm.liveTranscript
-                    )
-                    .padding()
-                    .foregroundColor(.secondary)
+                    VStack(spacing: 16) {
+
+                          WaveformView()
+
+                          Text(
+                              vm.liveTranscript.isEmpty ? "Listening..." : vm.liveTranscript
+                          )
+                          .foregroundColor(.secondary)
+                          .padding(.horizontal)
+                      }
+                      .padding()
                 }
                 
                 Button(action: {
