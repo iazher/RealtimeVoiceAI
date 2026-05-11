@@ -18,7 +18,8 @@ Realtime AI-powered voice assistant built with SwiftUI, Combine, and OpenAI stre
 
 # Demo
 
-https://github.com/user-attachments/assets/df0eb73b-d380-44a3-aec5-4f5e8f785aeb
+https://github.com/user-attachments/assets/fc3bbd67-91c1-4303-abb5-e68077a5d814
+
 
 # Tech Stack
 
