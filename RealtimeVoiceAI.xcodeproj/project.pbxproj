@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		CDCD11E32FE18813007AA8A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD4981E82FAD1ACD006EBAA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD4981EF2FAD1ACD006EBAA7;
+			remoteInfo = RealtimeVoiceAI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		CD4981F02FAD1ACD006EBAA7 /* RealtimeVoiceAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealtimeVoiceAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDCD11DF2FE18813007AA8A9 /* RealtimeVoiceAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealtimeVoiceAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = RealtimeVoiceAI;
 			sourceTree = "<group>";
 		};
+		CDCD11E02FE18813007AA8A9 /* RealtimeVoiceAITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RealtimeVoiceAITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CD4981ED2FAD1ACD006EBAA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDCD11DC2FE18813007AA8A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				CD4981F22FAD1ACD006EBAA7 /* RealtimeVoiceAI */,
+				CDCD11E02FE18813007AA8A9 /* RealtimeVoiceAITests */,
 				CD4981F12FAD1ACD006EBAA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				CD4981F02FAD1ACD006EBAA7 /* RealtimeVoiceAI.app */,
+				CDCD11DF2FE18813007AA8A9 /* RealtimeVoiceAITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = CD4981F02FAD1ACD006EBAA7 /* RealtimeVoiceAI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CDCD11DE2FE18813007AA8A9 /* RealtimeVoiceAITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDCD11E72FE18813007AA8A9 /* Build configuration list for PBXNativeTarget "RealtimeVoiceAITests" */;
+			buildPhases = (
+				CDCD11DB2FE18813007AA8A9 /* Sources */,
+				CDCD11DC2FE18813007AA8A9 /* Frameworks */,
+				CDCD11DD2FE18813007AA8A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDCD11E42FE18813007AA8A9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CDCD11E02FE18813007AA8A9 /* RealtimeVoiceAITests */,
+			);
+			name = RealtimeVoiceAITests;
+			packageProductDependencies = (
+			);
+			productName = RealtimeVoiceAITests;
+			productReference = CDCD11DF2FE18813007AA8A9 /* RealtimeVoiceAITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					CD4981EF2FAD1ACD006EBAA7 = {
 						CreatedOnToolsVersion = 26.0;
+					};
+					CDCD11DE2FE18813007AA8A9 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = CD4981EF2FAD1ACD006EBAA7;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				CD4981EF2FAD1ACD006EBAA7 /* RealtimeVoiceAI */,
+				CDCD11DE2FE18813007AA8A9 /* RealtimeVoiceAITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CD4981EE2FAD1ACD006EBAA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDCD11DD2FE18813007AA8A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDCD11DB2FE18813007AA8A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDCD11E42FE18813007AA8A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD4981EF2FAD1ACD006EBAA7 /* RealtimeVoiceAI */;
+			targetProxy = CDCD11E32FE18813007AA8A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CD4981F92FAD1ACE006EBAA7 /* Debug */ = {
@@ -314,6 +389,48 @@
 			};
 			name = Release;
 		};
+		CDCD11E52FE18813007AA8A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2Y87Z98RJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iman.RealtimeVoiceAITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RealtimeVoiceAI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RealtimeVoiceAI";
+			};
+			name = Debug;
+		};
+		CDCD11E62FE18813007AA8A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2Y87Z98RJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iman.RealtimeVoiceAITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RealtimeVoiceAI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RealtimeVoiceAI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,6 +448,15 @@
 			buildConfigurations = (
 				CD4981FC2FAD1ACE006EBAA7 /* Debug */,
 				CD4981FD2FAD1ACE006EBAA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDCD11E72FE18813007AA8A9 /* Build configuration list for PBXNativeTarget "RealtimeVoiceAITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDCD11E52FE18813007AA8A9 /* Debug */,
+				CDCD11E62FE18813007AA8A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
