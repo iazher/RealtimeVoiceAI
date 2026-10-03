@@ -103,15 +103,20 @@ Clone the repository:
 
     git clone https://github.com/iazher/RealtimeVoiceAI.git
 
-Open the project in Xcode.
+Add your OpenAI API key:
 
-Add your OpenAI API key inside:
+    cp Secrets.xcconfig.example Secrets.xcconfig
 
-    OpenAIService.swift
+Open `Secrets.xcconfig` and replace the placeholder with your real key:
 
-    private let apiKey = "YOUR_API_KEY"
+    OPENAI_API_KEY = sk-your-real-key-here
 
-Run the app on simulator or physical device.
+`Secrets.xcconfig` is listed in `.gitignore`, so your key stays local and is
+never committed. The key is picked up automatically at build time and made
+available to the app via `Bundle.main.object(forInfoDictionaryKey: "OPENAI_API_KEY")`
+in `OpenAIService.swift` — no code changes needed.
+
+Open the project in Xcode and run the app on simulator or physical device.
 
 # Learning Outcomes
 

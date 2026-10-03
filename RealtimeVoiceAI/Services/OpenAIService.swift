@@ -9,8 +9,16 @@ import Foundation
 
 final class OpenAIService {
 
-    // TODO: Add OpenAI API key here 
-    private let apiKey = ""
+    // Key is injected at build time via Secrets.xcconfig -> Info.plist.
+    // See README.md "Setup" for how to provide your own key.
+    private let apiKey: String = {
+        guard let key = Bundle.main.object(forInfoDictionaryKey: "OPENAI_API_KEY") as? String,
+              !key.isEmpty,
+              !key.hasPrefix("sk-REPLACE") else {
+            fatalError("Missing OPENAI_API_KEY. Copy Secrets.xcconfig.example to Secrets.xcconfig and add your key.")
+        }
+        return key
+    }()
 
     func streamResponse(
         userMessage: String,
